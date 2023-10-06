@@ -105,6 +105,18 @@ namespace Wkhtmltopdf.NetCore
         [OptionFlag("--replace")]
         public Dictionary<string, string> Replacements { get; set; }
 
+        /// <summary>
+        /// Indicates whether use smart shrinking or not.
+        /// </summary>
+        [OptionFlag("--disable-smart-shrinking")]
+        public bool DisableSmartShrinking { get; set; }
+
+        /// <summary>
+        /// Change DPI setting, default is 96
+        /// </summary>
+        [OptionFlag("-d")]
+        public int? DPI { get; set; }
+
         public string GetConvertOptions()
         {
             var result = new StringBuilder();
